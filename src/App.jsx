@@ -18,15 +18,24 @@ function App() {
 
   if (logueado) {
     return (
-      <div>
+      <div className="login">
         <h1>Bienvenido al SIWEBGCA  {usuario}</h1>
         <p>Has iniciado sesión correctamente.</p>
+        <button onClick={primaria}>PRIMARIA</button>
+        <button onClick={secundaria}>SECUNDARIA</button>
       </div>
-    )
-  }
+    )}
+    function primaria(){
+      alert("hola mundo primaria")
+    }
+    function secundaria(){
+      alert("hola mundo primaria")
+    }
 
   return (
-    <div>
+    
+    <div className="pagina">
+      <div className="login">
       <h2>SISTEMA WEB DE GESTIÓN DE CALIFICACIONES</h2>
 
       <h4>Colegio de las Américas</h4>
@@ -54,9 +63,11 @@ function App() {
       <br /><br />
 
       <button onClick={boton}>ENTRAR</button>
+      </div>
 
     </div>
   )
 }
+
 
 export default App
