@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import './App.css'
 function App() {
 
   const [usuario, setusuario] = useState('')
@@ -16,58 +16,95 @@ function App() {
     }
   }
 
+  function primaria() {
+    alert("hola mundo primaria")
+  }
+
+  function secundaria() {
+    alert("hola mundo secundaria")
+  }
+
   if (logueado) {
     return (
-      <div className="login">
-        <h1>Bienvenido al SIWEBGCA  {usuario}</h1>
-        <p>Has iniciado sesión correctamente.</p>
-        <button onClick={primaria}>PRIMARIA</button>
-        <button onClick={secundaria}>SECUNDARIA</button>
+      <div className="pagina">
+        <div className="login">
+          <img
+            src="/imagenes/logo siwebgca.png"
+            alt="Logo SIWEBGCA"
+            className="logo"
+          />
+
+          <h1 className="teitul">
+            Bienvenido al SIWEBGCA
+          </h1>
+
+          <p className="bienvenida">
+            Has iniciado sesión correctamente.
+          </p>
+
+          <div className="botones-nivel">
+            <button onClick={primaria}>PRIMARIA</button>
+            <button onClick={secundaria}>SECUNDARIA</button>
+          </div>
+
+        </div>
       </div>
-    )}
-    function primaria(){
-      alert("hola mundo primaria")
-    }
-    function secundaria(){
-      alert("hola mundo primaria")
-    }
+    )
+  }
 
   return (
-    
     <div className="pagina">
       <div className="login">
-      <h2>SISTEMA WEB DE GESTIÓN DE CALIFICACIONES</h2>
+        <img
+          src="/imagenes/logo siwebgca.png"
+          alt="Logo SIWEBGCA"
+          className="logo"
+        />
+        <h2 className="teitul">
+          SISTEMA WEB DE GESTIÓN DE CALIFICACIONES
+        </h2>
+        <h4 className="teitulch">
+          Colegio de las Américas
+        </h4>
+        <p className="bienvenida">
+          Bienvenidos
+        </p>
 
-      <h4>Colegio de las Américas</h4>
+        <div className="fila">
+          <label>USUARIO:</label>
+          <input
+            type="text"
+            value={usuario}
+            className="campo"
+            onChange={(e) => setusuario(e.target.value)}
+          />
 
-      <p>Bienvenidos</p>
+        </div>
 
-      <label>USUARIO:</label>
+        <div className="fila">
 
-      <input
-        type="text"
-        value={usuario}
-        onChange={(e) => setusuario(e.target.value)}
-      />
+          <label>CONTRASEÑA:</label>
 
-      <br /><br />
+          <input
+            type="password"
+            value={psswd}
+            className="campo"
+            onChange={(e) => setpsswd(e.target.value)}
+          />
 
-      <label>CONTRASEÑA:</label>
+        </div>
 
-      <input
-        type="password"
-        value={psswd}
-        onChange={(e) => setpsswd(e.target.value)}
-      />
+        <button
+          className="boton-entrar"
+          onClick={boton}
+        >
+          ENTRAR
+        </button>
 
-      <br /><br />
-
-      <button onClick={boton}>ENTRAR</button>
       </div>
 
     </div>
   )
 }
-
 
 export default App
